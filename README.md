@@ -36,8 +36,70 @@
 To begin working with the *Red5 Pro HTML5 SDK* in your project:
 
 ### Installation
-In a browser:  
-[download the latest release](https://account.red5pro.com/download)
+
+As a module:
+```sh
+npm i red5pro-html-sdk
+```
+
+```js
+import React from 'react'
+import { RTCSubscriber } from 'red5pro-html-sdk'
+
+class Subscriber extends React.Component {
+
+  constructor (props) {
+    super(props)
+    var config = {
+      protocol: 'ws',
+      host: 'localhost',
+      port: 5080,
+      app: 'live',
+      streamName: 'mystream',
+      rtcConfiguration: {
+        iceServers: [{urls: 'stun:stun2.l.google.com:19302'}],
+        iceCandidatePoolSize: 2,
+        bundlePolicy: 'max-bundle'
+      } // See https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection#RTCConfiguration_dictionary
+    }
+    this.state = {
+      configuration: config
+    }
+  }
+
+  async componentDidMount () {
+    const {
+      configuration
+    } = this.state
+    try {
+      const subscriber = await new RTCSubscriber().init(configuration)
+      await subscriber.subscribe()
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  render () {
+    return (
+      <div>
+        <video id="red5pro-subscriber"
+          width="640" height="480"
+          autoPlay playsInline muted controls />
+      </div>
+    )
+  }
+
+}
+
+export default Subscriber
+```
+
+> React is not required, only used as an example.
+
+---
+
+In a browser:
+[Download the latest release from your Red5 Pro Account](https://account.red5pro.com/download), or grab a [release](https://github.com/red5pro/red5pro-html-sdk/releases).
 
 ```html
 <!doctype html>
