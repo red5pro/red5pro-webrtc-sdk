@@ -1,0 +1,38 @@
+{
+  "name": "red5pro-html-sdk",
+  "version": "7.2.0",
+  "description": "Red5 Pro HTML SDK",
+  "main": "red5pro-sdk.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/red5pro/red5pro-html-sdk.git"
+  },
+  "author": "Red5 Pro",
+  "license": "LICENSE",
+  "keywords": [
+    "Red5 Pro",
+    "red5pro",
+    "webrtc",
+    "webrtc-streaming",
+    "video",
+    "audio",
+    "streaming",
+    "live-streaming",
+    "video-streaming",
+    "audio-streaming"
+  ],
+  "author": "Red5Pro",
+  "contributors": [
+    {
+      "name": "Todd Anderson",
+      "email": "todd@infrared5.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/red5pro/red5pro-html-sdk/issues"
+  },
+  "homepage": "https://github.com/red5pro/red5pro-html-sdk#readme"
+}
