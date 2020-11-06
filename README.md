@@ -10,6 +10,7 @@
 ---
 
 # Red5 Pro HTML5 SDK
+
 > The **Red5 Pro HTML5 SDK** allows you to integrate live streaming video into your desktop and mobile browser.
 
 * [Quickstart](#quickstart)
@@ -33,6 +34,7 @@
 * [Contributing](#contributing)
 
 ## Quickstart
+
 To begin working with the *Red5 Pro HTML5 SDK* in your project:
 
 ### Installation
@@ -84,7 +86,7 @@ class Subscriber extends React.Component {
       <div>
         <video id="red5pro-subscriber"
           width="640" height="480"
-          autoPlay playsInline muted controls />
+          autoPlay playsInline controls />
       </div>
     )
   }
