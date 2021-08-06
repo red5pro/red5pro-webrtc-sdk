@@ -9,8 +9,8 @@
 
 ---
 
-# Red5 Pro WebRTC SDK
-> The **Red5 Pro WebRTC SDK** allows you to integrate live streaming video into your desktop and mobile browser.
+# Red5 Pro HTML5 SDK
+> The **Red5 Pro HTML5 SDK** allows you to integrate live streaming video into your desktop and mobile browser.
 
 * [Quickstart](#quickstart)
   * [Installation](#installation)
@@ -18,9 +18,12 @@
 * [Usage](#usage)
   * [Publisher](#publisher)
     * [WebRTC](PUBLISHER_README.md#webrtc)
+    * [Flash/RTMP](PUBLISHER_README.md#flash)
+    * [Auto Failover](PUBLISHER_README.md#auto-failover-and-order)
     * [Lifecycle Events](PUBLISHER_README.md#lifecycle-events)
   * [Subscriber](#subscriber)
     * [WebRTC](SUBSCRIBER_README.md#webrtc)
+    * [Flash/RTMP](SUBSCRIBER_README.md#flash)
     * [HLS](SUBSCRIBER_README.md#hls)
     * [Auto Failover](SUBSCRIBER_README.md#auto-failover-and-order)
     * [Lifecycle Events](SUBSCRIBER_README.md#lifecycle-events)
@@ -42,33 +45,33 @@ While currently not open source, the SDK build has been published to NPM to allo
 ### As `script` in HTML page
 
 ```
-<script src="https://unpkg.com/red5pro-webrtc-sdk@latest/red5pro-sdk.min.js"></script>
+<script src="https://unpkg.com/red5pro-webtc-sdk@latest/red5pro-sdk.min.js"></script>
 ```
 
 ... or if you know the version:
 
 ```
-<script src="https://unpkg.com/red5pro-webrtc-sdk@8.0.0/red5pro-sdk.min.js"></script>
+<script src="https://unpkg.com/red5pro-webtc-sdk@8.0.0/red5pro-sdk.min.js"></script>
 ```
 
 ## Using `npm` or `yarn` for you browser-based projects
 
 ```
-npm install --save-dev red5pro-webrtc-sdk
+npm install --save-dev red5pro-webtc-sdk
 ```
 
 ```
-yarn install --dev red5pro-webrtc-sdk
+yarn install --dev red5pro-webtc-sdk
 ```
 
 ### Usage
 
-All members exposed on the otherwise global `window.red5prosdk` if loading as a script on an HTML page are importable from the `red5pro-webrtc-sdk` module:
+All members exposed on the otherwise global `window.red5prosdk` if loading as a script on an HTML page are importable from the `red5pro-webtc-sdk` module:
 
 _publisher-example.js_
 
 ```
-import { RTCPublisher } from 'red5pro-webrtc-sdk'
+import { RTCPublisher } from 'red5pro-webtc-sdk'
 ```
 
 To begin working with the *Red5 Pro HTML5 SDK* in your project:
@@ -92,7 +95,7 @@ To begin working with the *Red5 Pro HTML5 SDK* in your project:
       <video id="red5pro-subscriber" width="640" height="480" controls autoplay></video>
     </div>
     <!-- Red5 Pro SDK -->
-    <script src="https://unpkg.com/red5pro-webrtc-sdk@latest/red5pro-sdk.min.js"></script>
+    <script src="https://unpkg.com/red5pro-webtc-sdk@latest/red5pro-sdk.min.js"></script>
     <!-- Create Pub/Sub -->
     <script>
       (function(red5prosdk) {
