@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/red5pro/red5pro-webrtc-sdk.git"
   },
-  "author": "Red5 Pro",
+  "author": "Red5Pro",
   "license": "LICENSE",
   "keywords": [
     "Red5 Pro",
@@ -24,7 +24,6 @@
     "video-streaming",
     "audio-streaming"
   ],
-  "author": "Red5Pro",
   "contributors": [
     {
       "name": "Todd Anderson",
