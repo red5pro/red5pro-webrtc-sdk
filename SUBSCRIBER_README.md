@@ -67,13 +67,91 @@ _It is *highly* recommended to include [adapter.js](https://github.com/webrtcHac
 | subscriptionId | [x] | auto-generated | A unique string representing the requesting client. |
 | connectionParams | [-] | `undefined` | An object of connection parameters to send to the server upon connection request. |
 | videoEncoding | [-] | *None* | Specifies target video encoder. |
-| audio Encoding | [-] | *None* | Specifies target audio encoder. |
+| audioEncoding | [-] | *None* | Specifies target audio encoder. |
 | autoLayoutOrientation | [-] | `true` | Flag to allow SDK to auto-orientation the layout of `video` element based on broadcast metadata. _Mobile publishers broadcast with orientation._ |
 | muteOnAutoplayRestriction | [-] | `true` | Flag to attempt to mute the `video` element when `autoplay` is restricted in the browser. [See section on Autoplay Restrictions](#autoplay-restrictions) |
 | maintainConnectionOnSubscribeErrors | [-] | `false` | Flag to maintain previously established `WebSocket` connection on any failure within the `subscribe` request flow. [Example](https://github.com/red5pro/streaming-html5/tree/master/src/page/test/subscribeRetryOnInvalidName) |
 | signalingSocketOnly | [-] | `true` | Flag to indicate whether the `WebSocket` should only be used for signaling while establishing a connection. Afterward, all data between client and server will be sent over an `RTCDataChannel`.
 | dataChannelConfiguration | [-] | `{name: "red5pro"}` | An object used in configuring a n `RTCDataChannel`. _Only used when `signalingSocketOnly` is defined as `true`_ |
 | maintainStreamVariant | [-] | `false` | Flag to instruct the server - when utilizing transcoding - to not switch subscriber stream variants when network conditions change. By setting this to `true`, when you request to playback a stream that is transcoded, the server will not deliver a variant of higher or lower quality dependending on current network conditions. |
+| liveSeek | [-] | *None* | Configuration object to enable live seek capability. See [Live Seek](#live-seek) for more information.
+
+#### Live Seek
+
+You can enable live seek capabilities for a live playback by providing a `liveSeek` configuration in the initialization configuration for `RTCSubscriber`.
+
+The schema for the `liveSeek` configuration is as follows:
+
+```js
+{
+  enabled: <boolean>,
+  baseURL: <string | undefinde>,
+  fullURL: <string | undefined>,
+  hlsjsRef: <hls.js reference | undefined>,
+  hlsElement: <HTMLVideoElement | undefined>,
+  options: <object | undefined>,
+  usePlaybackControlsUI: <boolean>
+}
+```
+
+* `enabled` : a boolean flag of whether live seek is enabled or disabled.
+* `baseURL` : (optional) the base URL to access the HLS files that are generated for live seek streams.
+* `fullURL` : (optional) the full URL to access the HLS files that are generated for live seek streams.
+* `hlsjsRef` : (optional) the [HLS.JS](https://github.com/video-dev/hls.js/) reference. If you load HLS.js in a script tag, the SDK will check the `window` global for `Hls`, otherwise provide a reference to the loaded HLS.js.
+* `hlsElement` : (optional) the target `video` element to attach the HLS Media to. If left undefined, the SDK will create and maintain the target element (recommended).
+* `options` : (optional) the configuration options for [HLS.JS](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning). Default is: `{debug: false, backBufferLength: 0}`.
+* `usePlaybackControlsUI` : (optional) flag to use the custom controls provided by the SDK. Default is `true`. **If setting this to `false`, you must provide your own UI controls and interface with the API to control playback.**
+
+##### Server Requirements
+
+To enable live seek capability, the following configuration properties are required on the server in order to allow HLS recording to support `FMP4` playback:
+
+_File:_
+
+**conf/hlsconfig.xml**
+
+_Edits:_
+
+```xml
+<property name="outputFormat" value="FMP4"/>
+<property name="forceVODRecord" value="true"/>
+```
+
+##### Client Requirements
+
+**baseURL**
+
+The `baseURL` is the base endpoint URL from which the SDK will access the recorded HLS files. By default, the SDK will assume the base URL is the `host` of the initialization configuration, but when utilizing autoscale, the HLS files will not be accessible from the edge. As such, the server should be configured to upload the HLS files to a remote location - such as a CDN.
+
+The storage of the HLS files should follow the convention of `<baseURL>/<app scope>`, where `app scope` is where the live broadcast stream is streaming to and the bucket name within the CDN; do not include the `app scope` in the `baseURL` property.
+
+> For example, if your live broadcast is streaming to the `live` app scope under the name of `stream1`, and your CDN resides at `https://yourcdn/company`, then just provide `https://yourcdn/company` as the `baseURL` and the SDK will attempt to access the HLS files at `https://yourcdn/company/live/stream1.m3u8`.
+
+**fullURL**
+
+The `fullURL` could be provided that will be the full URL path to the HLS file used in live seek. If this is provided, it will use this _untouched_ and load the file directly.
+
+> For example, if you provide `https://yourcdn/company/live/stream1.m3u8` as the `fullURL`, that file will be requested.
+
+**hlsjsRef**
+
+The SDK requires the dependency of [HLS.JS](https://github.com/video-dev/hls.js/) 3rd-party library in order to achieve live seek of a stream.
+
+If you include it as a `script` tag source in your page, you do not have to set the `hlsjsRef` property, as the SDK will check the `window` global for the existance of `Hls`. In the chance that you did not include the UMD distribution of the library and instead are using it modularly, you need to provide a reference to the `Hls` import.
+
+**hlsElement**
+
+The optional target `video` element to load the HLS files into. If left `undefined` (the default), the SDK with generate and maintain the backing video element. By providing a target `hlsElement` you may need to maintain its own lifecycle.
+
+**options**
+
+Provide an optional `options` configuration that will be assigned untouched to the underlying [HLS.JS](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning) use.
+
+**usePlaybackControlsUI**
+
+Flag to use the default playback controls of the SDK to play, pause, live scrub, and additional actions. If setting this to `false`, you will need to create and manage your own controls to interact with the live and VOD content.
+
+> You can also provide your own custom controls and/or class declarations easily following this [guideline](https://www.red5pro.com/docs/development/playbackcontrols/overview/).
 
 #### Video Encoding Configuration
 
@@ -510,11 +588,17 @@ The following events are specific to the `RTCSubscriber` implementation and acce
 | CANDIDATE_START | 'WebRTC.Candidate.Start' | When the subscriber requests to send a candidate on the `PeerConnection`. |
 | CANDIDATE_END | 'WebRTC.Candidate.End' | When the subscriber has received a candidate over the `PeerConnection`. |
 | ICE_TRICKLE_COMPLETE | 'WebRTC.IceTrickle.Complete' | When the negotaiton process (a.k.a. trickle) has completed and the subscriber will attempt at consuming a stream. |
-| DATA_CHANNEL_AVAILABLE | 'WebRTC.DataChannel.Available' |  the underlying `RTCDataChannel` is available when `signalingSocketOnly` configuration is used. |
-| DATA_CHANNEL_OPEN | 'WebRTC.DataChannel.Open' | When the underlying `RTCDataChannel` is opened when `signalingSocketOnly` configuration is used.
-| DATA_CHANNEL_CLOSE | 'WebRTC.DataChannel.Close' | When the underlying `RTCDataChannel` is closed when `signalingSocketOnly` configuration is used. |
-| DATA_CHANNEL_ERROR | 'WebRTC.DataChannel.Error' | When an error has occurred within the underlying `RTCDataChannel` when `signalingSocketOnly` configuration is used. |
-| DATA_CHANNEL_MESSAGE | 'WebRTC.DataChannel.Message' | When a message has been delivered over the underlying `RTCDataChannel` when `signalingSocketOnly` configuration is used. |
+| DATA_CHANNEL_AVAILABLE | 'WebRTC.DataChannel.Available' |  the underlying `RTCDataChannel` is available when `signalingServerOnly` configuration is used. |
+| DATA_CHANNEL_OPEN | 'WebRTC.DataChannel.Open' | When the underlying `RTCDataChannel` is opened when `signalingServerOnly` configuration is used.
+| DATA_CHANNEL_CLOSE | 'WebRTC.DataChannel.Close' | When the underlying `RTCDataChannel` is closed when `signalingServerOnly` configuration is used. |
+| DATA_CHANNEL_ERROR | 'WebRTC.DataChannel.Error' | When an error has occurred within the underlying `RTCDataChannel` when `signalingServerOnly` configuration is used. |
+| DATA_CHANNEL_MESSAGE | 'WebRTC.DataChannel.Message' | When a message has been delivered over the underlying `RTCDataChannel` when `signalingServerOnly` configuration is used. |
+| LIVE_SEEK_ENABLED | 'WebRTC.LiveSeek.Enabled' | When `liveSeek` is used to playback Live VOD and the HLS video has been loaded and available to seek. |
+| LIVE_SEEK_DISABLED | 'WebRTC.LiveSeek.Disabled' | When `liveSeek` is used to playback Live VOD and HLS video has not been loaded nor available to seek. |
+| LIVE_SEEK_ERROR | 'WebRTC.LiveSeek.Error' | When `liveSeek` is used to playback Live VOD and HLS video and an error in playback has occurred. Inspect the `error` attribute on the event for more details. |
+| LIVE_SEEK_LOADING | 'WebRTC.LiveSeek.FragmentLoading' | When `liveSeek` is used to playback Live VOD and HLS video in currently loading a fragment during seeking. |
+| LIVE_SEEK_LOADED | 'WebRTC.LiveSeek.FragmentLoaded' | When `liveSeek` is used to playback Live VOD and HLS video has completed loading a fragment during seeking. |
+| LIVE_SEEK_CHANGE | 'WebRTC.LiveSeek.Change | When `liveSeek` is used, this event notifies on a change of state going from "live" to "vod" and vice versa.
 
 ## HLS Subscriber Events
 
