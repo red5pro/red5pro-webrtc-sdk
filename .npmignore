@@ -8,4 +8,5 @@ npm-debug.log
 
 # extras
 .eslintrc
+.prettierrc
 package-lock.json
