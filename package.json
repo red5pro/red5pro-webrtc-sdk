@@ -1,6 +1,6 @@
 {
   "name": "red5pro-webrtc-sdk",
-  "version": "12.0.0",
+  "version": "13.0.0-beta.1",
   "description": "Red5 Pro HTML SDK",
   "main": "red5pro-sdk.min.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "author": "Red5Pro",
   "license": "LICENSE",
   "keywords": [
+    "red5",
     "Red5 Pro",
     "red5pro",
     "webrtc",
@@ -27,7 +28,7 @@
   "contributors": [
     {
       "name": "Todd Anderson",
-      "email": "todd@infrared5.com"
+      "email": "todd@red5.net"
     }
   ],
   "bugs": {

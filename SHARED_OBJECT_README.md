@@ -2,6 +2,7 @@
   <img src="assets/red5pro_logo.png" alt="Red5 Pro Logo" />
 </h3>
 <p align="center">
+  <a href="WHIP_WHEP_README.md">WHIP/WHEP</a> &bull
   <a href="PUBLISHER_README.md">publisher</a> &bull;
   <a href="SUBSCRIBER_README.md">subscriber</a> &bull;
   <a href="SHARED_OBJECT_README.md">shared object</a>
@@ -81,7 +82,7 @@ When using an already established client connection, the content of the stream i
 ## Creating a Shared Object with Publisher
 
 ```js
-import { 
+import {
   RTCPublisher,
   Red5ProSharedObject
 } from 'red5pro-webrtc-sdk'
@@ -109,7 +110,7 @@ startPublisher()
 ## Creating a Shared Object with Subscriber Stream
 
 ```js
-import { 
+import {
   RTCSubscriber,
   Red5ProSharedObject
 } from 'red5pro-webrtc-sdk'
