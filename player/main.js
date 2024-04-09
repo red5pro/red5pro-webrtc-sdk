@@ -117,11 +117,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       await subscriber.subscribe()
     } catch (e) {
       unsubscribe()
-      // Retry. May be propagating.
-      let t = setTimeout(async () => {
-        clearTimeout(t)
-        await subscribe()
-      }, 2000)
+      if (mode === MODE_PUBSUB) {
+        // Retry. May be propagating.
+        let t = setTimeout(async () => {
+          clearTimeout(t)
+          await subscribe()
+        }, 2000)
+      }
     }
   }
 
