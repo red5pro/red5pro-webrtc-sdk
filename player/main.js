@@ -45,6 +45,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   const rtaUser = query('rta_user')
   const rtaPass = query('rta_pass')
   const rtaToken = query('rta_token')
+  const objectFit = query('object_fit', 'contain')
   const standalone = query('standalone', 'false') === 'true'
 
   let publisher
@@ -148,6 +149,10 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   }
 
   const start = async () => {
+    document.querySelectorAll('video').forEach(video => {
+      video.style.objectFit = objectFit
+    })
+
     try {
       switch (mode) {
         case MODE_SUB:
