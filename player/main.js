@@ -38,7 +38,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
   const mode = query('mode', MODE_PUBSUB)
   const host = query('host', window.location.hostName)
-  const context = query('context', 'live')
+  const app = query('app', 'live')
   const streamName = query('stream_name', 'mystream')
   const apiVersion = query('api_version', 'v1')
   const nodeGroup = query('node_group', 'default')
@@ -66,14 +66,14 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     if (standalone) {
       return {
         host,
-        app: context,
+        app,
         streamName,
         connectionParams: configureAuth({})
       }
     }
     // Else, Stream Manager 2.0 integration.
     return {
-      endpoint: `https://${host}/as/${apiVersion}/proxy/${client}/${context}/${streamName}`,
+      endpoint: `https://${host}/as/${apiVersion}/proxy/${client}/${app}/${streamName}`,
       streamName,
       connectionParams: configureAuth({
         nodeGroup

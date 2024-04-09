@@ -27,8 +27,79 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Red5 Player</title>
+    <script src="//webrtchacks.github.io/adapter/adapter-latest.js"></script>
     <script src="https://unpkg.com/red5pro-webrtc-sdk@beta/red5pro-sdk.min.js"></script>
     <link rel="stylesheet" href="player/main.css" />
+    <script>
+        ;(function () {
+          console.log('------- USAGE --------')
+          console.log('')
+          console.log(
+            'This page is designed to establish a Red5 Player using query params. You can provide query params in the URL in order to configure the player.'
+          )
+          console.log('The following query params are available:')
+          console.log(
+            '%c [host] ' +
+              '%c       : hostname or IP. Default: `window.location.hostname`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [app] ' + '%c       : app context. Default: `live`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [stream_name] ' + '%c       : The name of the stream to pub/sub. Default: `mystream`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [api_version] ' + '%c       : The version of the Stream Manager 2.0 API. Default: `v1`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [node_group] ' + '%c       : The name of the node group to target if using Stream Manager 2.0. Default: `default`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [rta_user] ' + '%c       : Username for RoundTrip Authentication if using. Default: `undefined`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [rta_pass] ' + '%c       : Password for RoundTrip Authentication if using. Default: `undefined`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [rta_token] ' + '%c       : Token for RoundTrip Authentication if using. Default: `undefined`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [standalone] ' + '%c       : Flag to indicate that the streaming is requested on a standalone deployment - not Stream Manager 2.0. Default: `false`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+          console.log('')
+          console.log(
+            '%c [mode] ' + '%c       : Mode to display. Either `pubsub`, `pub` or `sub`. Default: `pubsub`',
+            'background: #222; color: #ebefd0',
+            'background: #fff; color: #222'
+          )
+        })()
+    </script>
   </head>
   <body>
     <div class="app">
