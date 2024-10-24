@@ -1,6 +1,6 @@
 {
   "name": "red5pro-webrtc-sdk",
-  "version": "12.5.1",
+  "version": "13.0.0",
   "description": "Red5 Pro HTML SDK",
   "main": "red5pro-sdk.min.js",
   "scripts": {
