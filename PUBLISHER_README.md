@@ -132,7 +132,7 @@ const start = async () => {
             exact: 480
           },
           frameRate: {
-            min: 8
+            min: 8,
             max: 24
           }
         }
@@ -204,7 +204,7 @@ _main.js_:
             exact: 480
           },
           frameRate: {
-            min: 8
+            min: 8,
             max: 24
           }
         }
