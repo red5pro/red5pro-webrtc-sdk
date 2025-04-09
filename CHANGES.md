@@ -1,5 +1,11 @@
 # Changes
 
+## 14.2.0
+
+- fix: viewless subscriber and websocket signaling. (Todd Anderson)
+- feat: sending publish resolution on SDP. (Todd Anderson)
+- fix: transport type query paramms on whip/whep (Todd Anderson)
+
 ## 14.0.0
 
 - fix: publish codec listings. (Todd Anderson)
@@ -28,12 +34,13 @@
 - Fix for connectionParams tacked on WHIP/WHEP calls. (Todd Anderson)
 - Fix for Firefox issue with Bundle order (Todd Anderson)
 
-  > The issue was that the offer provided by the server has a BUNDLE order of 0 1 2. When the WHEP client set that as their remote SDP and generated an offer,
-  > the BUNDLE order changed to 2 1 0 in the answer SDP. This would cause
-  > subscription issues and non-existant candidates.
+    > The issue was that the offer provided by the server has a BUNDLE order of 0 1
+    > 2. When the WHEP client set that as their remote SDP and generated an offer,
+    > the BUNDLE order changed to 2 1 0 in the answer SDP. This would cause
+    > subscription issues and non-existant candidates.
 
-  > Solution was the munge in the incoming offer BUNDLE line order to that of the
-  > answer.
+    > Solution was the munge in the incoming offer BUNDLE line order to that of the
+    > answer.
 
 - Using host query param when Location provided to WHIP/WHEP clients. (Todd Anderson)
 - Fix for live seek fullURL switching. (Todd Anderson)
@@ -53,7 +60,7 @@
 - using Hls.js fallback for Safari and seek feature. (bustardcelly)
 - Allow playback on scrub when unpublish (bustardcelly)
 
-  > If the live stream becomes unpublished, but the video has been scrubbed to VOD time segment, then we want to allow for playback until the end of the live stream termination.
+    > If the live stream becomes unpublished, but the video has been scrubbed to VOD time segment, then we want to allow for playback until the end of the live stream termination.
 
 ## 10.6.0
 
@@ -106,16 +113,16 @@
 - Fix for flash stalled playback. (bustardcelly)
 - Added notifications for RTCPeerConnection open event. (bustardcelly)
 
-  > This will allow for clients to recognize when they can start using peer connection APIs such as mute/unmute.
+    > This will allow for clients to recognize when they can start using peer connection APIs such as mute/unmute.
 
 - fix for HLS socket authentication failure capture. (bustardcelly)
 - Fix for Safari Publisher issue. (bustardcelly)
 
-  > When `gUM` returns with `video` track listed before `audio`, there is an issue on delivering the media to the server. Most likely due to mismatched candidates.
+    > When `gUM` returns with `video` track listed before `audio`, there is an issue on delivering the media to the server. Most likely due to mismatched candidates.
 
 - Fixed improper spelling of `productInstallUrl` config option. (bustardcelly)
 
-  > Is now `productInstallURL` for both rtmp publisher and subscriber.
+    > Is now `productInstallURL` for both rtmp publisher and subscriber.
 
 - fix for unpublish not resolving if not currently publishing. (bustardcelly)
 - API update to allow for providing MediaStream for publish to bypass gUM in SDK internally. (bustardcelly)
@@ -135,9 +142,9 @@
 - fix for bandwidth inject in latest chrome browser. (bustardcelly)
 - adding notification and retry support for autoplay restriction of subscribers. (bustardcelly)
 
-  > - WebRTC, RTMP and HLS Subscriber support
-  > - muteOnAutoplayRestriction configuration property added
-  > - Additional subscriber events for client-side notifications of autoplay restrictions
+    > * WebRTC, RTMP and HLS Subscriber support
+    > * muteOnAutoplayRestriction configuration property added
+    > * Additional subscriber events for client-side notifications of autoplay restrictions
 
 - allowing for decoupled socket for sharedobject connections. (bustardcelly)
 
@@ -158,10 +165,10 @@
 - fix for DOM cleanup on unsubscribe. (bustardcelly)
 - Adding `rtcConfiguration` support (bustardcelly)
 
-  > - WebRTC Publisher
-  > - WebRTC Subscriber
-  > - defaults to `iceServers` if rtcConfiguration is undefined
-  > - Provides a default rtcConfiguration
+    > * WebRTC Publisher
+    > * WebRTC Subscriber
+    > * defaults to `iceServers` if rtcConfiguration is undefined
+    > * Provides a default rtcConfiguration
 
 ## 5.2.0
 
@@ -173,8 +180,8 @@
 - remove of duplicate event handler. (bustardcelly)
 - Adding check for empty candidate from server (bustardcelly)
 
-  > - Server at times (depending on client) will send a `candidate` object as empty during the negotiation process.
-  > - A new event type has been added to notify listeners of this empty candidate
+    > * Server at times (depending on client) will send a `candidate` object as empty during the negotiation process.
+    > * A new event type has been added to notify listeners of this empty candidate
 
 - Pub/Sub support for mobile device orientation recognition. (bustardcelly)
 
@@ -183,7 +190,7 @@
 - removing onbeforeunload hook to dismantle sockets. (bustardcelly)
 - Allowing for auth/validation on HLS Subscribers (bustardcelly)
 
-  > Enabling auth/validation using connectionParam options on HLS Subscribers. This will internally attempt to make a connection on a WebSocket using the connection parameters. If the socket is opened, it is considered successful validation. If rejected, the client is shutdown.
+    > Enabling auth/validation using connectionParam options on HLS Subscribers. This will internally attempt to make a connection on a WebSocket using the connection parameters. If the socket is opened, it is considered successful validation. If rejected, the client is shutdown.
 
 - fix for mutiple property updates on shared object integration. (bustardcelly)
 - offload translation logic for orientation to focus on dynamic layout updates. (bustardcelly)
@@ -192,8 +199,8 @@
 - removal of unnecessary bandwidth config prop on subscribers. (bustardcelly)
 - Exposing autoLayoutOrientation (bustardcelly)
 
-  > Defaulted to true.
-  > When set to false, it is up to the developer to assign transitions as related to orientation of broadcasts.
+    > Defaulted to true.
+    > When set to false, it is up to the developer to assign transitions as related to orientation of broadcasts.
 
 ## 4.5.0
 
@@ -254,6 +261,7 @@
 
 ## 3.4.3
 
+
 - fix for test of `srcObject` in video element. (bustardcelly)
 - fix for subscriber.stop event dispatch. (bustardcelly)
 
@@ -263,9 +271,11 @@
 - offloading subscriber start event to websocket notification. (bustardcelly)
 - Update for API change in browsers. (bustardcelly)
 
-  Though latest adapter.js should handle, adding for legacy and new browsers.
+    Though latest adapter.js should handle, adding for legacy and new browsers.
+
 
 ## 3.4.0
+
 
 ## 3.3.0
 
@@ -281,3 +291,4 @@
 
 - proper removal of child in flash embed. (bustardcelly)
 - support for IE and remove element on flash fallback. (bustardcelly)
+
