@@ -1,5 +1,9 @@
 # Changes
 
+## 14.3.0-beta.1
+
+- fix: viewless subscriber/whep response to metadata (Todd Anderson)
+
 ## 14.2.0
 
 - fix: viewless subscriber and websocket signaling. (Todd Anderson)
