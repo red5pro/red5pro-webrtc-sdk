@@ -1,11 +1,8 @@
 {
   "name": "red5pro-webrtc-sdk",
-  "version": "14.3.0",
+  "version": "15.0.0",
   "description": "Red5 Pro HTML SDK",
   "main": "red5pro-sdk.min.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/red5pro/red5pro-webrtc-sdk.git"
@@ -28,7 +25,7 @@
   "contributors": [
     {
       "name": "Todd Anderson",
-      "email": "todd@infrared5.com"
+      "email": "todd@red5.net"
     }
   ],
   "bugs": {
