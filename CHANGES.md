@@ -1,6 +1,6 @@
 # Changes
 
-## 15.2.0
+## 15.2.0-beta.1
 
 - fix: ICE configuration order preference (Todd Anderson).
 - feat: Connection health monitoring for WebRTC publishers and subscribers with automatic detection of stale stats, ICE state regression, excessive RTT, and ICE negotiation timeouts (Todd Anderson)
