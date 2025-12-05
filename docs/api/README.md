@@ -1,4 +1,4 @@
-**Red5 Pro WebRTC SDK v15.0.0**
+**Red5 Pro WebRTC SDK v15.2.0-beta.1**
 
 ***
 

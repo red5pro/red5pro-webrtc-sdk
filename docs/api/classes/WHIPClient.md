@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.0.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.2.0-beta.1**](../README.md)
 
 ***
 
@@ -91,6 +91,32 @@ The arguments to call the method with.
 #### Returns
 
 `Promise`\<`any`\>
+
+***
+
+### emit()
+
+> **emit**(`type`, `data`): `void`
+
+Emit an event on the WHIPClient.
+
+#### Parameters
+
+##### type
+
+`string`
+
+The type of event to emit.
+
+##### data
+
+`any`
+
+The data to emit.
+
+#### Returns
+
+`void`
 
 ***
 

@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.0.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.2.0-beta.1**](../README.md)
 
 ***
 
@@ -121,6 +121,12 @@
 #### version
 
 > **version**: `string`
+
+***
+
+### renegotiationPolicy?
+
+> `optional` **renegotiationPolicy**: `RenegotiationPolicyType`
 
 ***
 

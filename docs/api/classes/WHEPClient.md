@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.0.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.2.0-beta.1**](../README.md)
 
 ***
 
@@ -102,6 +102,32 @@ The arguments to call the method with.
 > **disableStandby**(): `void`
 
 Disable standby mode for the WHEP-based Subscriber. This will signal to the server to resume audio and video.
+
+#### Returns
+
+`void`
+
+***
+
+### emit()
+
+> **emit**(`type`, `data`): `void`
+
+Emit an event on the WHEP-based Subscriber.
+
+#### Parameters
+
+##### type
+
+`string`
+
+The type of event to emit.
+
+##### data
+
+`any`
+
+The data to emit.
 
 #### Returns
 
@@ -243,7 +269,7 @@ RTCWhepSubscriberConfigType to use for configuration.
 
 ### monitorStats()
 
-> **monitorStats**(`stats?`): `WHEPClient`
+> **monitorStats**(`stats?`, `renegotiationPolicy?`): `WHEPClient`
 
 Monitor the statistics of the media being delivered to the subscriber over the underlying RTCPeerConnection.
 
@@ -254,6 +280,12 @@ Monitor the statistics of the media being delivered to the subscriber over the u
 [`StatsConfig`](../type-aliases/StatsConfig.md)
 
 The statistics configuration.
+
+##### renegotiationPolicy?
+
+`RenegotiationPolicyType`
+
+The renegotiation policy configuration.
 
 #### Returns
 
