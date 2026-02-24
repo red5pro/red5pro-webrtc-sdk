@@ -9,7 +9,7 @@
 
 ---
 
-# Red5 Pro WebRTC SDK
+# Red5 HTML SDK
 
 > The **Red5 Pro WebRTC SDK** allows you to integrate live streaming video into your desktop and mobile browser.
 
