@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.0.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.2.0**](../README.md)
 
 ***
 
@@ -109,6 +109,32 @@ Disable standby mode for the WHEP-based Subscriber. This will signal to the serv
 
 ***
 
+### emit()
+
+> **emit**(`type`, `data`): `void`
+
+Emit an event on the WHEP-based Subscriber.
+
+#### Parameters
+
+##### type
+
+`string`
+
+The type of event to emit.
+
+##### data
+
+`any`
+
+The data to emit.
+
+#### Returns
+
+`void`
+
+***
+
 ### enableStandby()
 
 > **enableStandby**(): `void`
@@ -193,6 +219,18 @@ Get the media element for the WHEP-based Subscriber.
 
 ***
 
+### getPubNubClient()
+
+> **getPubNubClient**(): `undefined` \| [`PubNubClient`](PubNubClient.md)
+
+Get the PubNub client for the WHEP-based Subscriber.
+
+#### Returns
+
+`undefined` \| [`PubNubClient`](PubNubClient.md)
+
+***
+
 ### getType()
 
 > **getType**(): `string`
@@ -243,7 +281,7 @@ RTCWhepSubscriberConfigType to use for configuration.
 
 ### monitorStats()
 
-> **monitorStats**(`stats?`): `WHEPClient`
+> **monitorStats**(`stats?`, `renegotiationPolicy?`): `WHEPClient`
 
 Monitor the statistics of the media being delivered to the subscriber over the underlying RTCPeerConnection.
 
@@ -254,6 +292,12 @@ Monitor the statistics of the media being delivered to the subscriber over the u
 [`StatsConfig`](../type-aliases/StatsConfig.md)
 
 The statistics configuration.
+
+##### renegotiationPolicy?
+
+`RenegotiationPolicyType`
+
+The renegotiation policy configuration.
 
 #### Returns
 
@@ -485,6 +529,32 @@ The message to send.
 
 ***
 
+### sendPubNub()
+
+> **sendPubNub**(`channel`, `message`): `Promise`\<`boolean`\>
+
+Send a message to the PubNub channel.
+
+#### Parameters
+
+##### channel
+
+`string`
+
+The channel to send the message to.
+
+##### message
+
+`any`
+
+The message to send.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+***
+
 ### setVolume()
 
 > **setVolume**(`value`): `void`
@@ -534,6 +604,32 @@ Subscribe to the WHEP-based Subscriber.
 #### Returns
 
 `Promise`\<`WHEPClient`\>
+
+***
+
+### subscribePubNub()
+
+> **subscribePubNub**(`channel`, `options`): `Promise`\<`boolean`\>
+
+Subscribe to a PubNub channel.
+
+#### Parameters
+
+##### channel
+
+`string`
+
+The channel to subscribe to.
+
+##### options
+
+`any`
+
+The options to use for subscription.
+
+#### Returns
+
+`Promise`\<`boolean`\>
 
 ***
 
@@ -646,3 +742,23 @@ Optional boolean to indicate if the unsubscribe is internal.
 #### Returns
 
 `Promise`\<`void`\>
+
+***
+
+### unsubscribePubNub()
+
+> **unsubscribePubNub**(`channel`): `Promise`\<`boolean`\>
+
+Unsubscribe from a PubNub channel.
+
+#### Parameters
+
+##### channel
+
+`string`
+
+The channel to unsubscribe from.
+
+#### Returns
+
+`Promise`\<`boolean`\>

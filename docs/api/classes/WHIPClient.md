@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.0.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.2.0**](../README.md)
 
 ***
 
@@ -94,6 +94,32 @@ The arguments to call the method with.
 
 ***
 
+### emit()
+
+> **emit**(`type`, `data`): `void`
+
+Emit an event on the WHIPClient.
+
+#### Parameters
+
+##### type
+
+`string`
+
+The type of event to emit.
+
+##### data
+
+`any`
+
+The data to emit.
+
+#### Returns
+
+`void`
+
+***
+
 ### getDataChannel()
 
 > **getDataChannel**(): `undefined` \| `RTCDataChannel`
@@ -151,6 +177,18 @@ Get the PeerConnection for the WHIPClient.
 #### Returns
 
 `undefined` \| `RTCPeerConnection`
+
+***
+
+### getPubNubClient()
+
+> **getPubNubClient**(): `undefined` \| [`PubNubClient`](PubNubClient.md)
+
+Get the PubNub client for the WHIPClient.
+
+#### Returns
+
+`undefined` \| [`PubNubClient`](PubNubClient.md)
 
 ***
 
@@ -388,6 +426,58 @@ The message to send.
 
 ***
 
+### sendPubNub()
+
+> **sendPubNub**(`channel`, `message`): `Promise`\<`boolean`\>
+
+Send a message to the PubNub channel.
+
+#### Parameters
+
+##### channel
+
+`string`
+
+The channel to send the message to.
+
+##### message
+
+`any`
+
+The message to send.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+***
+
+### subscribePubNub()
+
+> **subscribePubNub**(`channel`, `options`): `Promise`\<`boolean`\>
+
+Subscribe to a PubNub channel.
+
+#### Parameters
+
+##### channel
+
+`string`
+
+The channel to subscribe to.
+
+##### options
+
+`any`
+
+The options to use for subscription.
+
+#### Returns
+
+`Promise`\<`boolean`\>
+
+***
+
 ### trigger()
 
 > **trigger**(`event`): `void`
@@ -465,3 +555,23 @@ Whether the unpublish is internal (i.e. not triggered by the user).
 #### Returns
 
 `Promise`\<`void`\>
+
+***
+
+### unsubscribePubNub()
+
+> **unsubscribePubNub**(`channel`): `Promise`\<`boolean`\>
+
+Unsubscribe from a PubNub channel.
+
+#### Parameters
+
+##### channel
+
+`string`
+
+The channel to unsubscribe from.
+
+#### Returns
+
+`Promise`\<`boolean`\>
