@@ -2,11 +2,11 @@
 
 ***
 
-[Red5 Pro WebRTC SDK](../globals.md) / SubscriberEvent
+[Red5 Pro WebRTC SDK](../globals.md) / MessageChannelEvent
 
-# Class: SubscriberEvent
+# Class: MessageChannelEvent
 
-Event for a Subscriber within the Red5 Pro WebRTC SDK.
+Event for a MessageChannel within the Red5 Pro WebRTC SDK.
 
 ## Extends
 
@@ -16,9 +16,9 @@ Event for a Subscriber within the Red5 Pro WebRTC SDK.
 
 ### Constructor
 
-> **new SubscriberEvent**(`type`, `subscriber`, `data?`): `SubscriberEvent`
+> **new MessageChannelEvent**(`type`, `messageChannel`, `data?`): `MessageChannelEvent`
 
-Constructor for a SubscriberEvent.
+Constructor for a MessageChannelEvent.
 
 #### Parameters
 
@@ -28,11 +28,11 @@ Constructor for a SubscriberEvent.
 
 The type of event.
 
-##### subscriber
+##### messageChannel
 
 `any`
 
-The subscriber (WHEPClient) that triggered the event.
+The message channel (MessageChannel) that triggered the event.
 
 ##### data?
 
@@ -42,7 +42,7 @@ The data associated with the event.
 
 #### Returns
 
-`SubscriberEvent`
+`MessageChannelEvent`
 
 #### Overrides
 
@@ -68,13 +68,13 @@ Get the data associated with the event.
 
 ***
 
-### subscriber
+### messageChannel
 
 #### Get Signature
 
-> **get** **subscriber**(): `any`
+> **get** **messageChannel**(): `any`
 
-Get the subscriber (WHEPClient) that triggered the event.
+Get the message channel (MessageChannel) that triggered the event.
 
 ##### Returns
 

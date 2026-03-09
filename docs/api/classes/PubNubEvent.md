@@ -2,11 +2,11 @@
 
 ***
 
-[Red5 Pro WebRTC SDK](../globals.md) / SubscriberEvent
+[Red5 Pro WebRTC SDK](../globals.md) / PubNubEvent
 
-# Class: SubscriberEvent
+# Class: PubNubEvent
 
-Event for a Subscriber within the Red5 Pro WebRTC SDK.
+Event for a PubNub within the Red5 Pro WebRTC SDK.
 
 ## Extends
 
@@ -16,9 +16,9 @@ Event for a Subscriber within the Red5 Pro WebRTC SDK.
 
 ### Constructor
 
-> **new SubscriberEvent**(`type`, `subscriber`, `data?`): `SubscriberEvent`
+> **new PubNubEvent**(`type`, `pubnub`, `data?`): `PubNubEvent`
 
-Constructor for a SubscriberEvent.
+Constructor for a PubNubEvent.
 
 #### Parameters
 
@@ -28,11 +28,11 @@ Constructor for a SubscriberEvent.
 
 The type of event.
 
-##### subscriber
+##### pubnub
 
 `any`
 
-The subscriber (WHEPClient) that triggered the event.
+The pubnub (PubNubClient) that triggered the event.
 
 ##### data?
 
@@ -42,7 +42,7 @@ The data associated with the event.
 
 #### Returns
 
-`SubscriberEvent`
+`PubNubEvent`
 
 #### Overrides
 
@@ -68,13 +68,13 @@ Get the data associated with the event.
 
 ***
 
-### subscriber
+### pubnub
 
 #### Get Signature
 
-> **get** **subscriber**(): `any`
+> **get** **pubnub**(): `any`
 
-Get the subscriber (WHEPClient) that triggered the event.
+Get the pubnub (PubNubClient) that triggered the event.
 
 ##### Returns
 
