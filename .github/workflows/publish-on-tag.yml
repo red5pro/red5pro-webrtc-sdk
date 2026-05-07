@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     tags:
-      - 'v*'
+      - '*'
 
 permissions:
   id-token: write
@@ -22,4 +22,21 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm ci
-      - run: npm publish
+      - name: Determine npm dist-tag from git tag
+        run: |
+          TAG_NAME="${GITHUB_REF_NAME#v}"
+          DIST_TAG="latest"
+
+          # Example:
+          # 15.5.0 -> latest
+          # 15.5.0-alpha.1 -> alpha
+          # 15.5.0-beta.1 -> beta
+          if [[ "$TAG_NAME" == *-* ]]; then
+            PRERELEASE_PART="${TAG_NAME#*-}"
+            DIST_TAG="${PRERELEASE_PART%%.*}"
+          fi
+
+          echo "DIST_TAG=$DIST_TAG" >> "$GITHUB_ENV"
+
+      - name: Publish package to npm
+        run: npm publish --tag "$DIST_TAG"
