@@ -5,6 +5,7 @@
   <a href="../README.md">Quick Start</a> &bull;
   <a href="whip-client.md">Publishing</a> &bull;
   <a href="#">Subscribing</a> &bull;
+  <a href="message-channel.md">Message Channel</a> &bull;
   <a href="pubnub-client.md">PubNub Client</a>
 </p>
 
@@ -253,6 +254,7 @@ The polling interval (in milliseconds) to access the `RTCStatsReport` from the u
 An array of static type strings. These directly map to the listing of type available for `RTCStatsReport` objects. If left empty or undefined, the SDK will report the statistics it deems suitable for tracking proper broadcast conditions.
 
 e.g.,
+
 ```js
 include: ['inbound-rtp', 'transport']
 ```
@@ -337,7 +339,7 @@ The policy has the following type structure:
 
 ```typescript
 type RenegotiationPolicyType = {
-  type: 'regression' | 'timeout' | 'disconnect'
+  type: 'regression' | 'timeout' | 'disconnect' | 'excessive-rtt'
   iceTimeoutInterval: number
 }
 ```
@@ -349,6 +351,7 @@ The following `type` values are:
 | `regression` | When the ICE status has changed from a previously designated `success`. This will not always occur during ICE negotiation failures. |
 | `timeout` | When it has been determined (in conjunction with the `iceTimeoutInterval`), that too much time has elapsed since the start of the negotiation process in order for it to conclude successfully. |
 | `disconnect` | When the peer connection has decided to disconnect after a failure of ICE negotiation. |
+| `excessive-rtt` | Then the round-trip time determined through statistics is considered excessive (anything over `600ms` is considered severe.)
 
 Typically, these will be executed in the order defined in the table above, however it should be noted that sometimes a `regression` may not occur in poor connection scenarios. If the process were to fail, both `timeout` and `disconnect` will occur.
 

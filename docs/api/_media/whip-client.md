@@ -5,6 +5,7 @@ i<h3 align="center">
   <a href="../README.md">Quick Start</a> &bull;
   <a href="#">Publishing</a> &bull;
   <a href="whep-client.md">Subscribing</a> &bull;
+  <a href="message-channel.md">Message Channel</a> &bull;
   <a href="pubnub-client.md">PubNub Client</a>
 </p>
 
@@ -21,6 +22,7 @@ This provides a standardized - and _blazingly fast_ - way to establish and broad
 * [Usage](#usage)
 * [Init Configuration](#init-configuration)
 * [Events](#events)
+* [Reconnect](#reconnect)
 * [Statistics](#statistics)
 * [Stream Manager 2.0](#stream-manager-20)
 * [PubNub Integration](#pubnub-integration)
@@ -120,6 +122,7 @@ When using the `init()` call of a `WHIPClient` - or, alternatively, when using a
 | `audioEncoding` | [-] | `undefined` | `PublishAudioEncoder` enum. |
 | `offerSDPResolution` | [-] | `false` | Request to send the initial resolution on the SDP offer in an attribute line with the following format: `a=framesize:${width}-${height}` |
 | `stats` | [-] | *None* | Configuration object to enable stats reporting. See [Stats Reporting](#statistics) for more information. |
+| `reconnect` | [-] | *None* | Configuration object to enable auto re-connect on lost connection, due to such things as change in network. See [Reconnect](#reconnect) for more information. |
 | `pubnub` | [-] | *None* | Configuration object for PubNub integration. See [PubNub Integration](#pubnub-integration) for more information. |
 
 ## Using MediaConstraints and onGetUserMedia
@@ -252,6 +255,9 @@ You can also listen to events individually. The following describe the various e
 | `CONNECTION_CLOSED` | 'Publisher.Connection.Closed' | Invoked when a close to the connection is detected. |
 | `DIMENSION_CHANGE` | 'Publisher.Video.DimensionChange' | Notification when the Camera resolution has been set or change. |
 | `STATISTICS_ENDPOINT_CHANGE` | 'Publisher.StatisticsEndpoint.Change' | Notification that the server has signaled a change in endpoint to deliver WebRTC Statistics based on RTCStatsReports. _Statistics are only reported after calling [monitorStats](#statistics)._ |
+| `RECONNECT_START` | 'Reconnect.Start' | Notification when a reconnection sequence has started. Requires `reconnect` initialization property to be enabled. |
+| `RECONNECT_FAILURE` | 'Reconnect.Failure' | Notification when a reconnection sequence has failed. Requires `reconnect` initialization property to be enabled. |
+| `RECONNECT_SUCCESS` | 'Reconnect.Success' | Notification when a reconnection sequence has been successful. Requires `reconnect` initialization property to be enabled.|
 
 In addition to the above events, the following events are also dispatched from a `WHIPClient` and are defined on the `RTCPublisherEventTypes` enum:
 
@@ -273,6 +279,36 @@ In addition to the above events, the following events are also dispatched from a
 | `DATA_CHANNEL_MESSAGE` | 'WebRTC.DataChannel.Message' | When a message has been delivered over the underlying `RTCDataChannel` when `signalingSocketOnly` configuration is used. |
 | `STATS_REPORT` | 'WebRTC.Stats.Report' | An RTCStatsReport has been captured by the WebRTC client based on configurations from calling [monitorStats](#statistics). |
 
+# Reconnect
+
+With the `15.4.0` release of the SDK, we introduced the possibility to auto re-connect a `WHIPClient` upon disconnection for such situations as network loss.
+
+> NOTE: This feature requires a server-side configuration for the `resilient-stream` plugin to work.
+
+## Reconnect Configuration
+
+The configuration used for statistics monitoring has the following structure (and their defaults):
+
+```js
+{
+  enabled: false,
+  timeout: 2000,
+  maxAttempts: 10
+}
+```
+
+### enabled
+
+Flag of having reconnection sequence enabled when detection of connection is lost.
+
+### timeout
+
+The amount of delay between attempts to re-connect.
+
+### maxAttempts
+
+The total amount of attempts to make before considering the possiblity of reconnect unavailable.
+
 # Statistics
 
 With the `15.0.0` release of the SDK, we introduced statistics monitoring for `WHIPClient` to support the ability to monitor and POST statistics report data based on the underlying `RTCPeerConnection` of the client.
@@ -287,7 +323,7 @@ The configuration used for statistics monitoring has the following structure:
   // If provided, it will POST stats to this endpoint.
   // If undefined or `data-channel`, it will post stats to message transport.
   // If null or `event-transport`, it will only emit status events.
-  red5prosdk.StatsEndpointType.DATA_CHANNEL,
+  endpoint: red5prosdk.StatsEndpointType.DATA_CHANNEL,
   additionalHeaders: undefined,
   interval: 5000, // Interval to poll stats, in milliseconds.
   include: [], // Empty array allows SDK to be judicious about what stats to include.
@@ -313,6 +349,7 @@ The polling interval (in milliseconds) to access the `RTCStatsReport` from the u
 An array of static type strings. These directly map to the listing of type available for `RTCStatsReport` objects. If left empty or undefined, the SDK will report the statistics it deems suitable for tracking proper broadcast conditions.
 
 e.g.,
+
 ```js
 include: ['outbound-rtp', 'transport']
 ```
