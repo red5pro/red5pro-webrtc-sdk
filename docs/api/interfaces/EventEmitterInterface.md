@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -10,7 +10,7 @@ Interface for the Event Emitter.
 
 ## Properties
 
-### off()
+### off
 
 > **off**: (`type`, `fn`) => `void`
 
@@ -32,7 +32,7 @@ Remove a callback handler for an event type.
 
 ***
 
-### on()
+### on
 
 > **on**: (`type`, `fn`) => `void`
 
@@ -54,7 +54,7 @@ Assign a callback handler to an event type.
 
 ***
 
-### trigger()
+### trigger
 
 > **trigger**: (`event`) => `void`
 

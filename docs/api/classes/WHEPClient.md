@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -61,13 +61,13 @@ Optional RTCWhepSubscriberConfigType to use for configuration.
 
 #### Get Signature
 
-> **get** **options**(): `undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+> **get** **options**(): [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 Get the options for the WHEP-based Subscriber.
 
 ##### Returns
 
-`undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+[`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 ## Methods
 
@@ -149,85 +149,85 @@ Enable standby mode for the WHEP-based Subscriber. This will signal to the serve
 
 ### getDataChannel()
 
-> **getDataChannel**(): `undefined` \| `RTCDataChannel`
+> **getDataChannel**(): `RTCDataChannel` \| `undefined`
 
 Get the data channel for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `RTCDataChannel`
+`RTCDataChannel` \| `undefined`
 
 ***
 
 ### getMediaStream()
 
-> **getMediaStream**(): `undefined` \| `MediaStream`
+> **getMediaStream**(): `MediaStream` \| `undefined`
 
 Get the media stream being played back by the subscriber.
 
 #### Returns
 
-`undefined` \| `MediaStream`
+`MediaStream` \| `undefined`
 
 ***
 
 ### getMessageTransport()
 
-> **getMessageTransport**(): `undefined` \| `MessageTransport`
+> **getMessageTransport**(): `MessageTransport` \| `undefined`
 
 Get the message transport for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `MessageTransport`
+`MessageTransport` \| `undefined`
 
 ***
 
 ### getOptions()
 
-> **getOptions**(): `undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+> **getOptions**(): [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 Get the options for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+[`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 ***
 
 ### getPeerConnection()
 
-> **getPeerConnection**(): `undefined` \| `RTCPeerConnection`
+> **getPeerConnection**(): `RTCPeerConnection` \| `undefined`
 
 Get the peer connection for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `RTCPeerConnection`
+`RTCPeerConnection` \| `undefined`
 
 ***
 
 ### getPlayer()
 
-> **getPlayer**(): `undefined` \| `HTMLMediaElement`
+> **getPlayer**(): `HTMLMediaElement` \| `undefined`
 
 Get the media element for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `HTMLMediaElement`
+`HTMLMediaElement` \| `undefined`
 
 ***
 
 ### getPubNubClient()
 
-> **getPubNubClient**(): `undefined` \| [`PubNubClient`](PubNubClient.md)
+> **getPubNubClient**(): [`PubNubClient`](PubNubClient.md) \| `undefined`
 
 Get the PubNub client for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| [`PubNubClient`](PubNubClient.md)
+[`PubNubClient`](PubNubClient.md) \| `undefined`
 
 ***
 
@@ -479,7 +479,7 @@ The time to seek to.
 
 ### send()
 
-> **send**(`methodName`, `data`): `Promise`\<`undefined` \| `boolean`\>
+> **send**(`methodName`, `data`): `Promise`\<`boolean` \| `undefined`\>
 
 Send a message to the Red5 Pro Server over the message transport (DataChannel).
 
@@ -499,7 +499,7 @@ The data to send.
 
 #### Returns
 
-`Promise`\<`undefined` \| `boolean`\>
+`Promise`\<`boolean` \| `undefined`\>
 
 ***
 
@@ -727,13 +727,13 @@ Unmute the video being delivered to the subscriber.
 
 ### unsubscribe()
 
-> **unsubscribe**(`internal`): `Promise`\<`void`\>
+> **unsubscribe**(`internal?`): `Promise`\<`void`\>
 
 Unsubscribe from the WHEP-based Subscriber.
 
 #### Parameters
 
-##### internal
+##### internal?
 
 `boolean` = `false`
 

@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -34,7 +34,7 @@
 
 > **defaultWhipPublisherConfig**: [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
 
-### getRecordedLogs()
+### getRecordedLogs
 
 > **getRecordedLogs**: () => `string`[]
 
@@ -46,7 +46,7 @@ Returns the stored logs if requested to `record` on establishment of logger.
 
 Array of recorded log messages.
 
-### getVersion()
+### getVersion
 
 > **getVersion**: () => `string`
 
@@ -174,7 +174,7 @@ Get the version of the SDK.
 
 ### PubNubEventTypes
 
-> **PubNubEventTypes**: *typeof* `PubNubEventTypes`
+> **PubNubEventTypes**: *typeof* [`PubNubEventTypes`](../enumerations/PubNubEventTypes.md)
 
 ### RTCPublisherEventTypes
 
@@ -184,7 +184,7 @@ Get the version of the SDK.
 
 > **RTCSubscriberEventTypes**: *typeof* [`RTCSubscriberEventTypes`](../enumerations/RTCSubscriberEventTypes.md)
 
-### setLogLevel()
+### setLogLevel
 
 > **setLogLevel**: (`level`, `record`) => `void`
 
@@ -194,7 +194,7 @@ Get the version of the SDK.
 
 `string`
 
-##### record
+##### record?
 
 `boolean` = `false`
 
@@ -217,6 +217,10 @@ Get the version of the SDK.
 ### version
 
 > **version**: `string`
+
+### WebRTCConnectionEventTypes
+
+> **WebRTCConnectionEventTypes**: *typeof* [`WebRTCConnectionEventTypes`](../enumerations/WebRTCConnectionEventTypes.md)
 
 ### WHEPClient
 

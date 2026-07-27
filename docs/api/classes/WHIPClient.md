@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -62,13 +62,13 @@ Optional additional options to override defaults.
 
 #### Get Signature
 
-> **get** **options**(): `undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+> **get** **options**(): [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 Get the options for the WHIPClient.
 
 ##### Returns
 
-`undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+[`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 ## Methods
 
@@ -126,73 +126,73 @@ The data to emit.
 
 ### getDataChannel()
 
-> **getDataChannel**(): `undefined` \| `RTCDataChannel`
+> **getDataChannel**(): `RTCDataChannel` \| `undefined`
 
 Get the DataChannel for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `RTCDataChannel`
+`RTCDataChannel` \| `undefined`
 
 ***
 
 ### getMediaStream()
 
-> **getMediaStream**(): `undefined` \| `MediaStream`
+> **getMediaStream**(): `MediaStream` \| `undefined`
 
 Get the MediaStream generated for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `MediaStream`
+`MediaStream` \| `undefined`
 
 ***
 
 ### getMessageTransport()
 
-> **getMessageTransport**(): `undefined` \| `MessageTransport`
+> **getMessageTransport**(): `MessageTransport` \| `undefined`
 
 Get the MessageTransport for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `MessageTransport`
+`MessageTransport` \| `undefined`
 
 ***
 
 ### getOptions()
 
-> **getOptions**(): `undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+> **getOptions**(): [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 Get the options for the WHIPClient.
 
 #### Returns
 
-`undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+[`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 ***
 
 ### getPeerConnection()
 
-> **getPeerConnection**(): `undefined` \| `RTCPeerConnection`
+> **getPeerConnection**(): `RTCPeerConnection` \| `undefined`
 
 Get the PeerConnection for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `RTCPeerConnection`
+`RTCPeerConnection` \| `undefined`
 
 ***
 
 ### getPubNubClient()
 
-> **getPubNubClient**(): `undefined` \| [`PubNubClient`](PubNubClient.md)
+> **getPubNubClient**(): [`PubNubClient`](PubNubClient.md) \| `undefined`
 
 Get the PubNub client for the WHIPClient.
 
 #### Returns
 
-`undefined` \| [`PubNubClient`](PubNubClient.md)
+[`PubNubClient`](PubNubClient.md) \| `undefined`
 
 ***
 
@@ -380,7 +380,7 @@ The name of the stream to publish.
 
 ### send()
 
-> **send**(`methodName`, `data`): `Promise`\<`undefined` \| `boolean`\>
+> **send**(`methodName`, `data`): `Promise`\<`boolean` \| `undefined`\>
 
 Send a message to the server.
 
@@ -400,7 +400,7 @@ The data to send.
 
 #### Returns
 
-`Promise`\<`undefined` \| `boolean`\>
+`Promise`\<`boolean` \| `undefined`\>
 
 ***
 
@@ -544,17 +544,17 @@ Unmute the video being published to the server.
 
 ### unpublish()
 
-> **unpublish**(`_internal`, `_isReconnect`): `Promise`\<`void`\>
+> **unpublish**(`_internal?`, `_isReconnect?`): `Promise`\<`void`\>
 
 Unpublish the MediaStream from the server.
 
 #### Parameters
 
-##### \_internal
+##### \_internal?
 
 `boolean` = `false`
 
-##### \_isReconnect
+##### \_isReconnect?
 
 `boolean` = `false`
 

@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -12,22 +12,22 @@
 
 ### deviceId?
 
-> `optional` **deviceId**: `string`
+> `optional` **deviceId?**: `string`
 
 ***
 
 ### frameRate?
 
-> `optional` **frameRate**: [`MediaConstraintRange`](MediaConstraintRange.md) \| `number`
+> `optional` **frameRate?**: [`MediaConstraintRange`](MediaConstraintRange.md) \| `number`
 
 ***
 
 ### height?
 
-> `optional` **height**: [`MediaConstraintRange`](MediaConstraintRange.md) \| `number`
+> `optional` **height?**: [`MediaConstraintRange`](MediaConstraintRange.md) \| `number`
 
 ***
 
 ### width?
 
-> `optional` **width**: [`MediaConstraintRange`](MediaConstraintRange.md) \| `number`
+> `optional` **width?**: [`MediaConstraintRange`](MediaConstraintRange.md) \| `number`

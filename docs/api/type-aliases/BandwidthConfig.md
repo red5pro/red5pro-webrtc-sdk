@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -12,10 +12,10 @@
 
 ### audio?
 
-> `optional` **audio**: `number`
+> `optional` **audio?**: `number`
 
 ***
 
 ### video?
 
-> `optional` **video**: `number`
+> `optional` **video?**: `number`

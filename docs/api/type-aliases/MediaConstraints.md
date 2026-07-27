@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.6.0-beta.1**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -12,10 +12,10 @@
 
 ### audio?
 
-> `optional` **audio**: `any` \| `boolean`
+> `optional` **audio?**: `any` \| `boolean`
 
 ***
 
 ### video?
 
-> `optional` **video**: [`VideoConstraints`](VideoConstraints.md) \| `boolean`
+> `optional` **video?**: [`VideoConstraints`](VideoConstraints.md) \| `boolean`
