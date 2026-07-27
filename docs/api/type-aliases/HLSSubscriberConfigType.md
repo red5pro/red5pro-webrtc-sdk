@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -18,7 +18,7 @@
 
 ### connectionParams?
 
-> `optional` **connectionParams**: `object`
+> `optional` **connectionParams?**: `object`
 
 #### Index Signature
 
@@ -28,25 +28,25 @@
 
 ### endpoint?
 
-> `optional` **endpoint**: `string`
+> `optional` **endpoint?**: `string`
 
 ***
 
 ### host?
 
-> `optional` **host**: `string`
+> `optional` **host?**: `string`
 
 ***
 
 ### mediaElementId?
 
-> `optional` **mediaElementId**: `string`
+> `optional` **mediaElementId?**: `string`
 
 ***
 
 ### muteOnAutoplayRestriction?
 
-> `optional` **muteOnAutoplayRestriction**: `boolean`
+> `optional` **muteOnAutoplayRestriction?**: `boolean`
 
 ***
 
@@ -64,4 +64,4 @@
 
 ### streamName?
 
-> `optional` **streamName**: `string`
+> `optional` **streamName?**: `string`

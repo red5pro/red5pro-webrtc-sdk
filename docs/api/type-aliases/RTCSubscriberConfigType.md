@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -18,7 +18,7 @@
 
 ### audioEncoding?
 
-> `optional` **audioEncoding**: [`PlaybackAudioEncoder`](../enumerations/PlaybackAudioEncoder.md)
+> `optional` **audioEncoding?**: [`PlaybackAudioEncoder`](../enumerations/PlaybackAudioEncoder.md)
 
 ***
 
@@ -36,7 +36,7 @@
 
 ### connectionParams?
 
-> `optional` **connectionParams**: `object`
+> `optional` **connectionParams?**: `object`
 
 #### Index Signature
 
@@ -46,19 +46,19 @@
 
 ### dataChannelConfiguration?
 
-> `optional` **dataChannelConfiguration**: `DataChannelConfig`
+> `optional` **dataChannelConfiguration?**: `DataChannelConfig`
 
 ***
 
 ### endpoint?
 
-> `optional` **endpoint**: `string`
+> `optional` **endpoint?**: `string`
 
 ***
 
 ### host?
 
-> `optional` **host**: `string`
+> `optional` **host?**: `string`
 
 ***
 
@@ -112,7 +112,7 @@
 
 ### proxy?
 
-> `optional` **proxy**: `object`
+> `optional` **proxy?**: `object`
 
 #### enabled
 
@@ -126,13 +126,13 @@
 
 ### pubnub?
 
-> `optional` **pubnub**: `PubnubConfigType`
+> `optional` **pubnub?**: `PubnubConfigType`
 
 ***
 
 ### renegotiationPolicy?
 
-> `optional` **renegotiationPolicy**: `RenegotiationPolicyType`
+> `optional` **renegotiationPolicy?**: `RenegotiationPolicyType`
 
 ***
 
@@ -150,22 +150,22 @@
 
 ### stats?
 
-> `optional` **stats**: [`StatsConfig`](StatsConfig.md)
+> `optional` **stats?**: [`StatsConfig`](StatsConfig.md)
 
 ***
 
 ### streamName?
 
-> `optional` **streamName**: `string`
+> `optional` **streamName?**: `string`
 
 ***
 
 ### subscriptionId?
 
-> `optional` **subscriptionId**: `string`
+> `optional` **subscriptionId?**: `string`
 
 ***
 
 ### videoEncoding?
 
-> `optional` **videoEncoding**: [`PlaybackVideoEncoder`](../enumerations/PlaybackVideoEncoder.md)
+> `optional` **videoEncoding?**: [`PlaybackVideoEncoder`](../enumerations/PlaybackVideoEncoder.md)

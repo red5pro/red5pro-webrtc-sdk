@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -14,7 +14,7 @@ Configuration for RTC Stats Monitoring.
 
 ### additionalHeaders?
 
-> `optional` **additionalHeaders**: `Record`\<`string`, `string`\>
+> `optional` **additionalHeaders?**: `Record`\<`string`, `string`\>
 
 ***
 
@@ -26,10 +26,10 @@ Configuration for RTC Stats Monitoring.
 
 ### include?
 
-> `optional` **include**: `string`[]
+> `optional` **include?**: `string`[]
 
 ***
 
 ### interval?
 
-> `optional` **interval**: `number`
+> `optional` **interval?**: `number`

@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -54,13 +54,13 @@ Optional LiveSeekConfigType to use for configuration.
 
 #### Get Signature
 
-> **get** **options**(): `undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+> **get** **options**(): [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 Get the options for the WHEP-based Subscriber.
 
 ##### Returns
 
-`undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+[`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 #### Inherited from
 
@@ -162,13 +162,13 @@ Enable standby mode for the WHEP-based Subscriber. This will signal to the serve
 
 ### getDataChannel()
 
-> **getDataChannel**(): `undefined` \| `RTCDataChannel`
+> **getDataChannel**(): `RTCDataChannel` \| `undefined`
 
 Get the data channel for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `RTCDataChannel`
+`RTCDataChannel` \| `undefined`
 
 #### Inherited from
 
@@ -178,13 +178,13 @@ Get the data channel for the WHEP-based Subscriber.
 
 ### getMediaStream()
 
-> **getMediaStream**(): `undefined` \| `MediaStream`
+> **getMediaStream**(): `MediaStream` \| `undefined`
 
 Get the media stream being played back by the subscriber.
 
 #### Returns
 
-`undefined` \| `MediaStream`
+`MediaStream` \| `undefined`
 
 #### Inherited from
 
@@ -194,13 +194,13 @@ Get the media stream being played back by the subscriber.
 
 ### getMessageTransport()
 
-> **getMessageTransport**(): `undefined` \| `MessageTransport`
+> **getMessageTransport**(): `MessageTransport` \| `undefined`
 
 Get the message transport for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `MessageTransport`
+`MessageTransport` \| `undefined`
 
 #### Inherited from
 
@@ -210,13 +210,13 @@ Get the message transport for the WHEP-based Subscriber.
 
 ### getOptions()
 
-> **getOptions**(): `undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+> **getOptions**(): [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 Get the options for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| [`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md)
+[`RTCWhepSubscriberConfigType`](../type-aliases/RTCWhepSubscriberConfigType.md) \| `undefined`
 
 #### Inherited from
 
@@ -226,13 +226,13 @@ Get the options for the WHEP-based Subscriber.
 
 ### getPeerConnection()
 
-> **getPeerConnection**(): `undefined` \| `RTCPeerConnection`
+> **getPeerConnection**(): `RTCPeerConnection` \| `undefined`
 
 Get the peer connection for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `RTCPeerConnection`
+`RTCPeerConnection` \| `undefined`
 
 #### Inherited from
 
@@ -242,13 +242,13 @@ Get the peer connection for the WHEP-based Subscriber.
 
 ### getPlayer()
 
-> **getPlayer**(): `undefined` \| `HTMLMediaElement`
+> **getPlayer**(): `HTMLMediaElement` \| `undefined`
 
 Get the media element for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| `HTMLMediaElement`
+`HTMLMediaElement` \| `undefined`
 
 #### Inherited from
 
@@ -258,13 +258,13 @@ Get the media element for the WHEP-based Subscriber.
 
 ### getPubNubClient()
 
-> **getPubNubClient**(): `undefined` \| [`PubNubClient`](PubNubClient.md)
+> **getPubNubClient**(): [`PubNubClient`](PubNubClient.md) \| `undefined`
 
 Get the PubNub client for the WHEP-based Subscriber.
 
 #### Returns
 
-`undefined` \| [`PubNubClient`](PubNubClient.md)
+[`PubNubClient`](PubNubClient.md) \| `undefined`
 
 #### Inherited from
 
@@ -540,7 +540,7 @@ The time to seek to.
 
 ### send()
 
-> **send**(`methodName`, `data`): `Promise`\<`undefined` \| `boolean`\>
+> **send**(`methodName`, `data`): `Promise`\<`boolean` \| `undefined`\>
 
 Send a message to the Red5 Pro Server over the message transport (DataChannel).
 
@@ -560,7 +560,7 @@ The data to send.
 
 #### Returns
 
-`Promise`\<`undefined` \| `boolean`\>
+`Promise`\<`boolean` \| `undefined`\>
 
 #### Inherited from
 
@@ -820,13 +820,13 @@ Unmute the video being delivered to the subscriber.
 
 ### unsubscribe()
 
-> **unsubscribe**(`internal`): `Promise`\<`void`\>
+> **unsubscribe**(`internal?`): `Promise`\<`void`\>
 
 Unsubscribe from the WHEP-based Subscriber.
 
 #### Parameters
 
-##### internal
+##### internal?
 
 `boolean` = `false`
 

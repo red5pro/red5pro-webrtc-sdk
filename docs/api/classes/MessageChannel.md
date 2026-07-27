@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -25,7 +25,7 @@ This ingest-based client is useful for sending and receiving messages to and fro
 
 ##### url
 
-`undefined` | `string`
+`string` \| `undefined`
 
 ##### additionalOptions?
 
@@ -45,13 +45,13 @@ This ingest-based client is useful for sending and receiving messages to and fro
 
 #### Get Signature
 
-> **get** **options**(): `undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+> **get** **options**(): [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 Get the options for the WHIPClient.
 
 ##### Returns
 
-`undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+[`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 #### Inherited from
 
@@ -133,13 +133,13 @@ The data to emit.
 
 ### getDataChannel()
 
-> **getDataChannel**(): `undefined` \| `RTCDataChannel`
+> **getDataChannel**(): `RTCDataChannel` \| `undefined`
 
 Get the DataChannel for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `RTCDataChannel`
+`RTCDataChannel` \| `undefined`
 
 #### Inherited from
 
@@ -149,13 +149,13 @@ Get the DataChannel for the WHIPClient.
 
 ### getMediaStream()
 
-> **getMediaStream**(): `undefined` \| `MediaStream`
+> **getMediaStream**(): `MediaStream` \| `undefined`
 
 Get the MediaStream generated for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `MediaStream`
+`MediaStream` \| `undefined`
 
 #### Inherited from
 
@@ -165,13 +165,13 @@ Get the MediaStream generated for the WHIPClient.
 
 ### getMessageTransport()
 
-> **getMessageTransport**(): `undefined` \| `MessageTransport`
+> **getMessageTransport**(): `MessageTransport` \| `undefined`
 
 Get the MessageTransport for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `MessageTransport`
+`MessageTransport` \| `undefined`
 
 #### Inherited from
 
@@ -181,13 +181,13 @@ Get the MessageTransport for the WHIPClient.
 
 ### getOptions()
 
-> **getOptions**(): `undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+> **getOptions**(): [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 Get the options for the WHIPClient.
 
 #### Returns
 
-`undefined` \| [`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md)
+[`RTCWhipPublisherConfigType`](../type-aliases/RTCWhipPublisherConfigType.md) \| `undefined`
 
 #### Inherited from
 
@@ -197,13 +197,13 @@ Get the options for the WHIPClient.
 
 ### getPeerConnection()
 
-> **getPeerConnection**(): `undefined` \| `RTCPeerConnection`
+> **getPeerConnection**(): `RTCPeerConnection` \| `undefined`
 
 Get the PeerConnection for the WHIPClient.
 
 #### Returns
 
-`undefined` \| `RTCPeerConnection`
+`RTCPeerConnection` \| `undefined`
 
 #### Inherited from
 
@@ -213,13 +213,13 @@ Get the PeerConnection for the WHIPClient.
 
 ### getPubNubClient()
 
-> **getPubNubClient**(): `undefined` \| [`PubNubClient`](PubNubClient.md)
+> **getPubNubClient**(): [`PubNubClient`](PubNubClient.md) \| `undefined`
 
 Get the PubNub client for the WHIPClient.
 
 #### Returns
 
-`undefined` \| [`PubNubClient`](PubNubClient.md)
+[`PubNubClient`](PubNubClient.md) \| `undefined`
 
 #### Inherited from
 
@@ -415,13 +415,13 @@ The function to call when the event is triggered.
 
 ### open()
 
-> **open**(`inactivePingIntervalMS`): `Promise`\<`MessageChannel`\>
+> **open**(`inactivePingIntervalMS?`): `Promise`\<`MessageChannel`\>
 
 Open the MessageChannel.
 
 #### Parameters
 
-##### inactivePingIntervalMS
+##### inactivePingIntervalMS?
 
 `number` = `10000`
 
@@ -451,7 +451,7 @@ Publish the MediaStream to the server.
 
 ### send()
 
-> **send**(`methodName`, `data`): `Promise`\<`undefined` \| `boolean`\>
+> **send**(`methodName`, `data`): `Promise`\<`boolean` \| `undefined`\>
 
 Send a JSON message to the server over the data channel.
  - Overrides the send method in the WHIPClient class to properly wrap the data in a message object with methodName.
@@ -472,7 +472,7 @@ The data to send.
 
 #### Returns
 
-`Promise`\<`undefined` \| `boolean`\>
+`Promise`\<`boolean` \| `undefined`\>
 
 #### Overrides
 
@@ -724,3 +724,27 @@ The channel to unsubscribe from.
 #### Inherited from
 
 [`WHIPClient`](WHIPClient.md).[`unsubscribePubNub`](WHIPClient.md#unsubscribepubnub)
+
+***
+
+### updateOptimizationParams()
+
+> **updateOptimizationParams**(`optimizationParams`): `void`
+
+Update the optimization parameters for the published stream.
+
+#### Parameters
+
+##### optimizationParams
+
+`OptimizationParams`
+
+The optimization parameters to update.
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+[`WHIPClient`](WHIPClient.md).[`updateOptimizationParams`](WHIPClient.md#updateoptimizationparams)

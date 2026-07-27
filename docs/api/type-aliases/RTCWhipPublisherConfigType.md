@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -12,8 +12,8 @@
 
 ### includeDataChannel?
 
-> `optional` **includeDataChannel**: `true`
+> `optional` **includeDataChannel?**: `true`
 
 ### signalingSocketOnly?
 
-> `optional` **signalingSocketOnly**: `false`
+> `optional` **signalingSocketOnly?**: `false`

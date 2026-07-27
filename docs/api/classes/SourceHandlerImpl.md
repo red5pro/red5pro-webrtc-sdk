@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -46,13 +46,13 @@ The type of the source handler.
 
 ### attemptAutoplay()
 
-> **attemptAutoplay**(`muteOnAutoplay`): `Promise`\<`void`\>
+> **attemptAutoplay**(`muteOnAutoplay?`): `Promise`\<`void`\>
 
 Attempt to autoplay the media element.
 
 #### Parameters
 
-##### muteOnAutoplay
+##### muteOnAutoplay?
 
 `boolean` = `false`
 
@@ -86,13 +86,13 @@ Disconnect the media element.
 
 ### getControls()
 
-> **getControls**(): `undefined` \| [`PlaybackControls`](PlaybackControls.md)
+> **getControls**(): [`PlaybackControls`](PlaybackControls.md) \| `undefined`
 
 Get the controls for the media element.
 
 #### Returns
 
-`undefined` \| [`PlaybackControls`](PlaybackControls.md)
+[`PlaybackControls`](PlaybackControls.md) \| `undefined`
 
 #### Overrides
 
@@ -268,7 +268,7 @@ Resume the media element.
 
 ### seekTo()
 
-> **seekTo**(`percentage`, `duration`): `void`
+> **seekTo**(`percentage`, `duration?`): `void`
 
 Seek to a specific time in the media element.
 
@@ -278,7 +278,7 @@ Seek to a specific time in the media element.
 
 `number`
 
-##### duration
+##### duration?
 
 `undefined` = `undefined`
 

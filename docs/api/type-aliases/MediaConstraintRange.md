@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -12,22 +12,22 @@
 
 ### exact?
 
-> `optional` **exact**: `number`
+> `optional` **exact?**: `number`
 
 ***
 
 ### ideal?
 
-> `optional` **ideal**: `number`
+> `optional` **ideal?**: `number`
 
 ***
 
 ### max?
 
-> `optional` **max**: `number`
+> `optional` **max?**: `number`
 
 ***
 
 ### min?
 
-> `optional` **min**: `number`
+> `optional` **min?**: `number`

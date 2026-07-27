@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -36,7 +36,7 @@
 
 ### connectionParams?
 
-> `optional` **connectionParams**: `object`
+> `optional` **connectionParams?**: `object`
 
 #### Index Signature
 
@@ -46,13 +46,13 @@
 
 ### dataChannelConfiguration?
 
-> `optional` **dataChannelConfiguration**: `DataChannelConfig`
+> `optional` **dataChannelConfiguration?**: `DataChannelConfig`
 
 ***
 
 ### endpoint?
 
-> `optional` **endpoint**: `string`
+> `optional` **endpoint?**: `string`
 
 ***
 
@@ -64,7 +64,7 @@
 
 ### host?
 
-> `optional` **host**: `string`
+> `optional` **host?**: `string`
 
 ***
 
@@ -98,13 +98,19 @@
 
 ***
 
-### onGetUserMedia()?
+### onGetUserMedia?
 
-> `optional` **onGetUserMedia**: () => `Promise`\<`MediaStream`\>
+> `optional` **onGetUserMedia?**: () => `Promise`\<`MediaStream`\>
 
 #### Returns
 
 `Promise`\<`MediaStream`\>
+
+***
+
+### optimizationParams?
+
+> `optional` **optimizationParams?**: `OptimizationParams`
 
 ***
 
@@ -122,7 +128,7 @@
 
 ### proxy?
 
-> `optional` **proxy**: `object`
+> `optional` **proxy?**: `object`
 
 #### enabled
 
@@ -136,13 +142,13 @@
 
 ### pubnub?
 
-> `optional` **pubnub**: `PubnubConfigType`
+> `optional` **pubnub?**: `PubnubConfigType`
 
 ***
 
 ### reconnect?
 
-> `optional` **reconnect**: `ReconnectConfig`
+> `optional` **reconnect?**: `ReconnectConfig`
 
 ***
 
@@ -160,7 +166,7 @@
 
 ### stats?
 
-> `optional` **stats**: [`StatsConfig`](StatsConfig.md)
+> `optional` **stats?**: [`StatsConfig`](StatsConfig.md)
 
 ***
 
@@ -172,7 +178,7 @@
 
 ### streamName?
 
-> `optional` **streamName**: `string`
+> `optional` **streamName?**: `string`
 
 ***
 

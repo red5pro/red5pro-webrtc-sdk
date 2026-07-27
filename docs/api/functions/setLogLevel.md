@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Function: setLogLevel()
 
-> **setLogLevel**(`level`, `record`): `void`
+> **setLogLevel**(`level`, `record?`): `void`
 
 ## Parameters
 
@@ -14,7 +14,7 @@
 
 `string`
 
-### record
+### record?
 
 `boolean` = `false`
 

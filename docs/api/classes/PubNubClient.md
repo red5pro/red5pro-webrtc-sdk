@@ -1,4 +1,4 @@
-[**Red5 Pro WebRTC SDK v15.5.0**](../README.md)
+[**Red5 Pro WebRTC SDK v15.6.0**](../README.md)
 
 ***
 
@@ -32,11 +32,11 @@ Base class for an Event Emitter.
 
 #### Get Signature
 
-> **get** **config**(): `undefined` \| `PubnubConfigType`
+> **get** **config**(): `PubnubConfigType` \| `undefined`
 
 ##### Returns
 
-`undefined` \| `PubnubConfigType`
+`PubnubConfigType` \| `undefined`
 
 ***
 
@@ -64,11 +64,11 @@ Base class for an Event Emitter.
 
 ### getOptions()
 
-> **getOptions**(): `undefined` \| `PubnubConfigType`
+> **getOptions**(): `PubnubConfigType` \| `undefined`
 
 #### Returns
 
-`undefined` \| `PubnubConfigType`
+`PubnubConfigType` \| `undefined`
 
 ***
 
