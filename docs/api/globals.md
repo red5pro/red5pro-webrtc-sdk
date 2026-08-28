@@ -1,8 +1,8 @@
-[**Red5 Pro WebRTC SDK v15.6.1**](README.md)
+[**Red5 Pro WebRTC SDK v16.0.0**](README.md)
 
 ***
 
-# Red5 Pro WebRTC SDK v15.6.1
+# Red5 Pro WebRTC SDK v16.0.0
 
 Red5 Pro WebRTC SDK
 
@@ -32,6 +32,9 @@ Red5 Pro WebRTC SDK
 - [MessageChannel](classes/MessageChannel.md)
 - [MessageChannelEvent](classes/MessageChannelEvent.md)
 - [MessageTransportStateEvent](classes/MessageTransportStateEvent.md)
+- [MOQCatalog](classes/MOQCatalog.md)
+- [MOQPublisher](classes/MOQPublisher.md)
+- [MOQSubscriber](classes/MOQSubscriber.md)
 - [PlaybackController](classes/PlaybackController.md)
 - [PlaybackControls](classes/PlaybackControls.md)
 - [PublisherEvent](classes/PublisherEvent.md)

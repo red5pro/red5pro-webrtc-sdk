@@ -31,6 +31,8 @@ export { MessageChannelEventTypes, MessageTransportStateEventTypes, PublisherEve
 export { default as Capability } from 'types/capabilities';
 import { PubNubEventTypes } from 'event/pubnub';
 export { PubNubEventTypes } from 'event/pubnub';
+import { MOQSubscriber, MOQPublisher, MOQCatalog } from 'moq';
+export { MOQCatalog, MOQPublisher, MOQSubscriber } from 'moq';
 
 declare const LEVELS: {
     readonly TRACE: "trace";
@@ -1377,6 +1379,9 @@ declare const _default: {
     defaultWhipPublisherConfig: RTCWhipPublisherConfigType;
     defaultStatsConfig: StatsConfig;
     StatsEndpointType: typeof EndpointType;
+    MOQSubscriber: typeof MOQSubscriber;
+    MOQPublisher: typeof MOQPublisher;
+    MOQCatalog: typeof MOQCatalog;
 };
 
 export { EventEmitter, HLSSubscriber, LEVELS as LOG_LEVELS, LiveSeekClient, MessageChannel, PlaybackController, PlaybackControls, PubNubClient, SourceHandler, SourceHandlerImpl, WHEPClient, WHIPClient, _default as default, getLogger, getRecordedLogs, getVersion, setLogLevel };
