@@ -1,5 +1,9 @@
 # Changes
 
+## 16.0.0
+
+- feat: Major version bump to align with Red5 Server release (Todd Anderson).
+
 ## 15.6.1
 
 - fix: Firefox - stop subscriber reconnect loop from unpairable ICE candidates (davidengelmaier).
